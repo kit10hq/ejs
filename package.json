@@ -19,7 +19,7 @@
 		"ejs": "3.1.10"
 	},
 	"peerDependencies": {
-		"kit10": "file:../kit10/pack-1781013143544.tar.gz"
+		"kit10": "github:kit10hq/kit10#cf3384aa913b244b992c4d62ac29eeb02e506f2d"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.10",
@@ -37,6 +37,8 @@
 		"kit10": "../kit10"
 	},
 	"scripts": {
+		"4git": "dev pack update --git && bun i && bun check",
+		"4local": "dev pack update --local && bun i && bun run pack",
 		"build": "tsdown src/main.ts --unused --dts --format esm",
 		"check": "bun run lint && bun run build",
 		"lint": "biome format && oxlint && eslint . && tsc",
