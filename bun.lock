@@ -21,7 +21,6 @@
       },
       "peerDependencies": {
         "kit10": "file:../kit10/pack-1781013143544.tar.gz",
-        "vite": "^8.0",
       },
     },
   },

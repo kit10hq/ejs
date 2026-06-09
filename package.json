@@ -19,8 +19,7 @@
 		"ejs": "3.1.10"
 	},
 	"peerDependencies": {
-		"kit10": "file:../kit10/pack-1781013143544.tar.gz",
-		"vite": "^8.0"
+		"kit10": "file:../kit10/pack-1781013143544.tar.gz"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.10",
