@@ -1,0 +1,61 @@
+{
+	"name": "@kit10/ejs",
+	"version": "0.1.0-dev",
+	"description": "",
+	"publishConfig": {
+		"access": "public"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/main.d.mts",
+			"import": "./dist/main.mjs"
+		}
+	},
+	"engines": {
+		"node": ">=22.16"
+	},
+	"dependencies": {
+		"ejs": "3.1.10"
+	},
+	"peerDependencies": {
+		"kit10": "file:../kit10/pack-1781013143544.tar.gz",
+		"vite": "^8.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.10",
+		"@kirick/lint": "0.3.2",
+		"@types/ejs": "3.1.5",
+		"@types/node": "^22.15.13",
+		"eslint": "10.2.0",
+		"oxlint": "1.58.0",
+		"publint": "0.3.21",
+		"tsdown": "0.22.0",
+		"typescript": "6.0.2",
+		"unplugin-unused": "0.5.7"
+	},
+	"_devpack": {
+		"kit10": "../kit10"
+	},
+	"scripts": {
+		"build": "tsdown src/main.ts --unused --dts --format esm",
+		"check": "bun run lint && bun run build",
+		"lint": "biome format && oxlint && eslint . && tsc",
+		"pack": "bun run check && dev pack create"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kit10hq/ejs.git"
+	},
+	"keywords": [
+		"kit10",
+		"vite",
+		"ejs"
+	],
+	"author": "Daniil Kirichenko (https://twitter.com/kirickme)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/kit10hq/ejs/issues"
+	},
+	"homepage": "https://github.com/kit10hq/ejs#readme"
+}
