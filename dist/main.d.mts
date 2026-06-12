@@ -1,6 +1,6 @@
-import { Kit10Plugin } from "kit10";
+import { Plugin } from "kit10";
 
 //#region src/main.d.ts
-declare const ejsPlugin: Kit10Plugin;
+declare const ejsPlugin: Plugin;
 //#endregion
 export { ejsPlugin };

@@ -1,16 +1,14 @@
-import fs from "node:fs/promises";
 import { render } from "ejs";
 //#region src/main.ts
 const ejsPlugin = {
-	kit10: true,
-	htmlPreprocessor: {
-		filter: /\.ejs/u,
-		async transform(filename) {
-			return render(await fs.readFile(filename, "utf8"), {}, {
-				strict: true,
-				filename
-			});
-		}
+	filter: /\.ejs/u,
+	async transform(artifact) {
+		const content_html = render(await artifact.text(), {}, {
+			strict: true,
+			filename: artifact.absolute_path
+		});
+		artifact.updateExt("html");
+		artifact.update(content_html);
 	}
 };
 //#endregion
